@@ -1,0 +1,2386 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "for,goodby,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,okay,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "farewel": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "again,meet,until,we": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "easi,it,take": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "see,soon,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "catch,later,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "a,good,have,one": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "good,night": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "adio": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "hey,there": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "good,morn": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "afternoon,good": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "even,good": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "yo": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "is,up,what": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi,there": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "go,how,is,it": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "do,how,you": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "account,from,fund,to,transfer,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "from,money,move,to,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "give,money,to,xxxx": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "from,money,send,to,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "and,between,money,transfer,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "from,initi,to,transfer,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "execut,from,to,transfer,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "account,from,fund,move,to,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "account,from,money,to,transfer,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "account,from,fund,send,to,xxxx,yyyyy": {
+            "intent": "transfer",
+            "domain": "default"
+          },
+          "account,deposit,fund,into,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,add,money,to,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,into,money,put,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "a,account,deposit,make,to,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,cash,deposit,to,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,deposit,in,money,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,give,money,my,to": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,add,fund,to,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,amount,deposit,into,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,cash,deposit,into,yyyyy": {
+            "intent": "deposit",
+            "domain": "default"
+          },
+          "account,from,fund,withdraw,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "account,from,money,out,take,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "account,cash,from,withdraw,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "account,from,get,money,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "a,account,from,make,withdraw,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "account,from,fund,out,pull,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "account,amount,from,withdraw,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "account,cash,from,my,withdraw,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "account,from,fund,take,xxxx": {
+            "intent": "withdraw",
+            "domain": "default"
+          },
+          "account,balanc,check": {
+            "intent": "checkbalance",
+            "domain": "default"
+          },
+          "balanc,view": {
+            "intent": "checkbalance",
+            "domain": "default"
+          },
+          "account,balanc,see": {
+            "intent": "checkbalance",
+            "domain": "default"
+          },
+          "account,balanc,get": {
+            "intent": "checkbalance",
+            "domain": "default"
+          },
+          "balanc,me,show,the": {
+            "intent": "checkbalance",
+            "domain": "default"
+          },
+          "balanc,inquiri": {
+            "intent": "checkbalance",
+            "domain": "default"
+          },
+          "balanc,check,my": {
+            "intent": "checkbalance",
+            "domain": "default"
+          },
+          "balanc,current": {
+            "intent": "checkbalance",
+            "domain": "default"
+          },
+          "log,out": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "out,sign": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "log,me,out": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "log,out,pleas": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "i,out,sign,to,want": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "me,out,sign": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "out,pleas,sign": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "i,log,need,out,to": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "i,need,out,sign,to": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "log,off": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "i,log,off,to,want": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "log,off,pleas": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "off,sign": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "i,off,sign,to,want": {
+            "intent": "logout",
+            "domain": "default"
+          },
+          "off,pleas,sign": {
+            "intent": "logout",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "default",
+          "transfer": "default",
+          "deposit": "default",
+          "withdraw": "default",
+          "checkbalance": "default",
+          "logout": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "goodbye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye bye take care",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "okay see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "farewell",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "until we meet again",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "take it easy",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you soon",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "catch you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "have a good one",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "good night",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "adios",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "how do you do",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "transfer funds from account xxxx to account yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "move money from xxxx to yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "give money to xxxx",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "send money from xxxx to yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "transfer money between xxxx and yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "initiate transfer from xxxx to yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "execute transfer from xxxx to yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "move funds from account xxxx to account yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "transfer money from account xxxx to account yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "send funds from account xxxx to account yyyyy",
+            "intent": "transfer"
+          },
+          {
+            "domain": "default",
+            "utterance": "deposit funds into account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "add money to account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "put money into account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "make a deposit to account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "deposit cash to account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "deposit money in account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "give money to my account",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "add funds to account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "deposit amount into account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "deposit cash into account yyyyy",
+            "intent": "deposit"
+          },
+          {
+            "domain": "default",
+            "utterance": "withdraw funds from account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "take out money from account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "withdraw cash from account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "get money from account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "make a withdrawal from account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "pull out funds from account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "withdraw amount from account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "withdraw cash from my account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "take funds from account xxxx",
+            "intent": "withdraw"
+          },
+          {
+            "domain": "default",
+            "utterance": "check account balance",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "view balance",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "see account balance",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "get account balance",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me the balance",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "balance inquiry",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "check my balance",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "account balance check",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "current balance",
+            "intent": "checkbalance"
+          },
+          {
+            "domain": "default",
+            "utterance": "log out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "sign out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "log me out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "please log out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to sign out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "sign me out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "please sign out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to log out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to sign out",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "log off",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to log off",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "please log off",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "sign off",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to sign off",
+            "intent": "logout"
+          },
+          {
+            "domain": "default",
+            "utterance": "please sign off",
+            "intent": "logout"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "goodby": 1,
+              "for": 1,
+              "now": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "okay": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1,
+              "farewel": 1,
+              "until": 1,
+              "we": 1,
+              "meet": 1,
+              "again": 1,
+              "it": 1,
+              "easi": 1,
+              "soon": 1,
+              "catch": 1,
+              "have": 1,
+              "a": 1,
+              "good": 1,
+              "one": 1,
+              "night": 1,
+              "adio": 1,
+              "hey": 1,
+              "there": 1,
+              "hello": 1,
+              "morn": 1,
+              "afternoon": 1,
+              "even": 1,
+              "yo": 1,
+              "what": 1,
+              "is": 1,
+              "up": 1,
+              "hi": 1,
+              "how": 1,
+              "do": 1,
+              "transfer": 1,
+              "fund": 1,
+              "from": 1,
+              "account": 1,
+              "xxxx": 1,
+              "to": 1,
+              "yyyyy": 1,
+              "move": 1,
+              "money": 1,
+              "give": 1,
+              "send": 1,
+              "between": 1,
+              "and": 1,
+              "initi": 1,
+              "execut": 1,
+              "deposit": 1,
+              "into": 1,
+              "add": 1,
+              "put": 1,
+              "make": 1,
+              "cash": 1,
+              "in": 1,
+              "my": 1,
+              "amount": 1,
+              "withdraw": 1,
+              "out": 1,
+              "get": 1,
+              "pull": 1,
+              "check": 1,
+              "balanc": 1,
+              "view": 1,
+              "show": 1,
+              "me": 1,
+              "the": 1,
+              "inquiri": 1,
+              "current": 1,
+              "log": 1,
+              "sign": 1,
+              "pleas": 1,
+              "want": 1,
+              "need": 1,
+              "off": 1
+            },
+            "intents": {
+              "greetings.bye": 1,
+              "greetings.hello": 1,
+              "transfer": 1,
+              "deposit": 1,
+              "withdraw": 1,
+              "checkbalance": 1,
+              "logout": 1
+            },
+            "intentFeatures": {
+              "greetings.bye": {
+                "goodby": 1,
+                "for": 1,
+                "now": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "okay": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1,
+                "farewel": 1,
+                "until": 1,
+                "we": 1,
+                "meet": 1,
+                "again": 1,
+                "it": 1,
+                "easi": 1,
+                "soon": 1,
+                "catch": 1,
+                "have": 1,
+                "a": 1,
+                "good": 1,
+                "one": 1,
+                "night": 1,
+                "adio": 1
+              },
+              "greetings.hello": {
+                "hey": 1,
+                "there": 1,
+                "hello": 1,
+                "good": 1,
+                "morn": 1,
+                "afternoon": 1,
+                "even": 1,
+                "yo": 1,
+                "what": 1,
+                "is": 1,
+                "up": 1,
+                "hi": 1,
+                "how": 1,
+                "it": 1,
+                "go": 1,
+                "do": 1,
+                "you": 1
+              },
+              "transfer": {
+                "transfer": 1,
+                "fund": 1,
+                "from": 1,
+                "account": 1,
+                "xxxx": 1,
+                "to": 1,
+                "yyyyy": 1,
+                "move": 1,
+                "money": 1,
+                "give": 1,
+                "send": 1,
+                "between": 1,
+                "and": 1,
+                "initi": 1,
+                "execut": 1
+              },
+              "deposit": {
+                "deposit": 1,
+                "fund": 1,
+                "into": 1,
+                "account": 1,
+                "yyyyy": 1,
+                "add": 1,
+                "money": 1,
+                "to": 1,
+                "put": 1,
+                "make": 1,
+                "a": 1,
+                "cash": 1,
+                "in": 1,
+                "give": 1,
+                "my": 1,
+                "amount": 1
+              },
+              "withdraw": {
+                "withdraw": 1,
+                "fund": 1,
+                "from": 1,
+                "account": 1,
+                "xxxx": 1,
+                "take": 1,
+                "out": 1,
+                "money": 1,
+                "cash": 1,
+                "get": 1,
+                "make": 1,
+                "a": 1,
+                "pull": 1,
+                "amount": 1,
+                "my": 1
+              },
+              "checkbalance": {
+                "check": 1,
+                "account": 1,
+                "balanc": 1,
+                "view": 1,
+                "see": 1,
+                "get": 1,
+                "show": 1,
+                "me": 1,
+                "the": 1,
+                "inquiri": 1,
+                "my": 1,
+                "current": 1
+              },
+              "logout": {
+                "log": 1,
+                "out": 1,
+                "sign": 1,
+                "me": 1,
+                "pleas": 1,
+                "i": 1,
+                "want": 1,
+                "to": 1,
+                "need": 1,
+                "off": 1
+              }
+            },
+            "featuresToIntent": {
+              "goodby": [
+                "greetings.bye"
+              ],
+              "for": [
+                "greetings.bye"
+              ],
+              "now": [
+                "greetings.bye"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "take": [
+                "greetings.bye",
+                "withdraw"
+              ],
+              "care": [
+                "greetings.bye"
+              ],
+              "okay": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye",
+                "checkbalance"
+              ],
+              "you": [
+                "greetings.bye",
+                "greetings.hello"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "i": [
+                "greetings.bye",
+                "logout"
+              ],
+              "must": [
+                "greetings.bye"
+              ],
+              "go": [
+                "greetings.bye",
+                "greetings.hello"
+              ],
+              "farewel": [
+                "greetings.bye"
+              ],
+              "until": [
+                "greetings.bye"
+              ],
+              "we": [
+                "greetings.bye"
+              ],
+              "meet": [
+                "greetings.bye"
+              ],
+              "again": [
+                "greetings.bye"
+              ],
+              "it": [
+                "greetings.bye",
+                "greetings.hello"
+              ],
+              "easi": [
+                "greetings.bye"
+              ],
+              "soon": [
+                "greetings.bye"
+              ],
+              "catch": [
+                "greetings.bye"
+              ],
+              "have": [
+                "greetings.bye"
+              ],
+              "a": [
+                "greetings.bye",
+                "deposit",
+                "withdraw"
+              ],
+              "good": [
+                "greetings.bye",
+                "greetings.hello"
+              ],
+              "one": [
+                "greetings.bye"
+              ],
+              "night": [
+                "greetings.bye"
+              ],
+              "adio": [
+                "greetings.bye"
+              ],
+              "hey": [
+                "greetings.hello"
+              ],
+              "there": [
+                "greetings.hello"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "morn": [
+                "greetings.hello"
+              ],
+              "afternoon": [
+                "greetings.hello"
+              ],
+              "even": [
+                "greetings.hello"
+              ],
+              "yo": [
+                "greetings.hello"
+              ],
+              "what": [
+                "greetings.hello"
+              ],
+              "is": [
+                "greetings.hello"
+              ],
+              "up": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "how": [
+                "greetings.hello"
+              ],
+              "do": [
+                "greetings.hello"
+              ],
+              "transfer": [
+                "transfer"
+              ],
+              "fund": [
+                "transfer",
+                "deposit",
+                "withdraw"
+              ],
+              "from": [
+                "transfer",
+                "withdraw"
+              ],
+              "account": [
+                "transfer",
+                "deposit",
+                "withdraw",
+                "checkbalance"
+              ],
+              "xxxx": [
+                "transfer",
+                "withdraw"
+              ],
+              "to": [
+                "transfer",
+                "deposit",
+                "logout"
+              ],
+              "yyyyy": [
+                "transfer",
+                "deposit"
+              ],
+              "move": [
+                "transfer"
+              ],
+              "money": [
+                "transfer",
+                "deposit",
+                "withdraw"
+              ],
+              "give": [
+                "transfer",
+                "deposit"
+              ],
+              "send": [
+                "transfer"
+              ],
+              "between": [
+                "transfer"
+              ],
+              "and": [
+                "transfer"
+              ],
+              "initi": [
+                "transfer"
+              ],
+              "execut": [
+                "transfer"
+              ],
+              "deposit": [
+                "deposit"
+              ],
+              "into": [
+                "deposit"
+              ],
+              "add": [
+                "deposit"
+              ],
+              "put": [
+                "deposit"
+              ],
+              "make": [
+                "deposit",
+                "withdraw"
+              ],
+              "cash": [
+                "deposit",
+                "withdraw"
+              ],
+              "in": [
+                "deposit"
+              ],
+              "my": [
+                "deposit",
+                "withdraw",
+                "checkbalance"
+              ],
+              "amount": [
+                "deposit",
+                "withdraw"
+              ],
+              "withdraw": [
+                "withdraw"
+              ],
+              "out": [
+                "withdraw",
+                "logout"
+              ],
+              "get": [
+                "withdraw",
+                "checkbalance"
+              ],
+              "pull": [
+                "withdraw"
+              ],
+              "check": [
+                "checkbalance"
+              ],
+              "balanc": [
+                "checkbalance"
+              ],
+              "view": [
+                "checkbalance"
+              ],
+              "show": [
+                "checkbalance"
+              ],
+              "me": [
+                "checkbalance",
+                "logout"
+              ],
+              "the": [
+                "checkbalance"
+              ],
+              "inquiri": [
+                "checkbalance"
+              ],
+              "current": [
+                "checkbalance"
+              ],
+              "log": [
+                "logout"
+              ],
+              "sign": [
+                "logout"
+              ],
+              "pleas": [
+                "logout"
+              ],
+              "want": [
+                "logout"
+              ],
+              "need": [
+                "logout"
+              ],
+              "off": [
+                "logout"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "goodby",
+                "for",
+                "now",
+                "bye",
+                "take",
+                "care",
+                "okay",
+                "see",
+                "you",
+                "later",
+                "i",
+                "must",
+                "go",
+                "farewel",
+                "until",
+                "we",
+                "meet",
+                "again",
+                "it",
+                "easi",
+                "soon",
+                "catch",
+                "have",
+                "a",
+                "good",
+                "one",
+                "night",
+                "adio",
+                "hey",
+                "there",
+                "hello",
+                "morn",
+                "afternoon",
+                "even",
+                "yo",
+                "what",
+                "is",
+                "up",
+                "hi",
+                "how",
+                "do",
+                "transfer",
+                "fund",
+                "from",
+                "account",
+                "xxxx",
+                "to",
+                "yyyyy",
+                "move",
+                "money",
+                "give",
+                "send",
+                "between",
+                "and",
+                "initi",
+                "execut",
+                "deposit",
+                "into",
+                "add",
+                "put",
+                "make",
+                "cash",
+                "in",
+                "my",
+                "amount",
+                "withdraw",
+                "out",
+                "get",
+                "pull",
+                "check",
+                "balanc",
+                "view",
+                "show",
+                "me",
+                "the",
+                "inquiri",
+                "current",
+                "log",
+                "sign",
+                "pleas",
+                "want",
+                "need",
+                "off"
+              ],
+              "intents": [
+                "greetings.bye",
+                "greetings.hello",
+                "transfer",
+                "deposit",
+                "withdraw",
+                "checkbalance",
+                "logout"
+              ],
+              "perceptrons": [
+                [
+                  3.1026952266693115,
+                  0.5020777583122253,
+                  5.152022838592529,
+                  3.465256452560425,
+                  3.9612035751342773,
+                  1.4227900505065918,
+                  -2.5065510272979736,
+                  2.3365540504455566,
+                  0.6087680459022522,
+                  8.524502754211426,
+                  2.8603694438934326,
+                  4.2172465324401855,
+                  1.8002327680587769,
+                  8.907151222229004,
+                  2.2192776203155518,
+                  2.2192776203155518,
+                  2.2192776203155518,
+                  2.2192776203155518,
+                  1.2512191534042358,
+                  3.668250799179077,
+                  5.818600177764893,
+                  -0.1580420285463333,
+                  3.3456859588623047,
+                  2.9960901737213135,
+                  -0.8149228692054749,
+                  3.3456859588623047,
+                  9.691884994506836,
+                  8.90384292602539,
+                  -5.396302700042725,
+                  -3.4490931034088135,
+                  -5.4054718017578125,
+                  -4.618661403656006,
+                  -4.617530822753906,
+                  -4.615109443664551,
+                  -5.398422718048096,
+                  -1.0460070371627808,
+                  -3.525883674621582,
+                  -1.0460070371627808,
+                  -1.9711722135543823,
+                  -4.956645488739014,
+                  -2.5267343521118164,
+                  -0.42826345562934875,
+                  -1.4821476936340332,
+                  -1.994467854499817,
+                  -3.555520534515381,
+                  -2.358262777328491,
+                  -2.5539731979370117,
+                  -1.4438788890838623,
+                  -0.12236309796571732,
+                  -1.042550802230835,
+                  -0.2276177555322647,
+                  -0.0494341216981411,
+                  -0.10687949508428574,
+                  -0.10687949508428574,
+                  -0.007849536836147308,
+                  0,
+                  -0.5226395726203918,
+                  -0.35771411657333374,
+                  -0.024082936346530914,
+                  -0.04093301668763161,
+                  -0.3493751585483551,
+                  -0.05727004632353783,
+                  -0.009292565286159515,
+                  -0.3627219498157501,
+                  -0.05090335011482239,
+                  -0.18151764571666718,
+                  -2.753074884414673,
+                  -0.03292005881667137,
+                  0,
+                  -0.5235180258750916,
+                  -4.542719841003418,
+                  -0.8850772976875305,
+                  -0.25684884190559387,
+                  -0.5777838826179504,
+                  -0.25684884190559387,
+                  -0.883653998374939,
+                  -0.8816215395927429,
+                  -2.6726932525634766,
+                  -2.6717689037323,
+                  -0.5558559894561768,
+                  -0.7907226085662842,
+                  -0.5634356737136841,
+                  -2.751845598220825,
+                  5.428710391310061
+                ],
+                [
+                  -1.1176329851150513,
+                  -1.6211622953414917,
+                  -2.559384822845459,
+                  -2.351985216140747,
+                  -2.8429067134857178,
+                  -0.8784499764442444,
+                  -0.7590200901031494,
+                  -2.9393510818481445,
+                  -0.138343945145607,
+                  -4.877390384674072,
+                  -2.286623239517212,
+                  -2.200282335281372,
+                  -0.44120079278945923,
+                  -4.889623641967773,
+                  -1.2328602075576782,
+                  -1.2328602075576782,
+                  -1.2328602075576782,
+                  -1.2328602075576782,
+                  -0.1613045483827591,
+                  -1.9203674793243408,
+                  -1.853272557258606,
+                  -1.264984369277954,
+                  -3.0232863426208496,
+                  -3.122603416442871,
+                  4.045027256011963,
+                  -3.0232863426208496,
+                  -8.97607421875,
+                  -4.878896713256836,
+                  8.433024406433105,
+                  1.736318826675415,
+                  9.442156791687012,
+                  5.352749347686768,
+                  5.353603839874268,
+                  5.3530659675598145,
+                  9.440760612487793,
+                  2.5502736568450928,
+                  4.309133052825928,
+                  2.5502736568450928,
+                  7.218862056732178,
+                  5.623169422149658,
+                  3.863339424133301,
+                  -0.5493654608726501,
+                  -0.6345500349998474,
+                  -1.0592907667160034,
+                  -2.120917797088623,
+                  -1.6383112668991089,
+                  -1.5783610343933105,
+                  -1.797123670578003,
+                  -0.16262699663639069,
+                  -1.2890441417694092,
+                  -0.4488573968410492,
+                  -0.06570055335760117,
+                  -0.1275625228881836,
+                  -0.1275625228881836,
+                  -0.010432451032102108,
+                  0,
+                  -0.5584712624549866,
+                  -0.5445214509963989,
+                  -0.03200749680399895,
+                  -0.05440213531255722,
+                  -0.07844363152980804,
+                  -0.15639141201972961,
+                  -0.016858479008078575,
+                  -0.43109750747680664,
+                  -0.13219605386257172,
+                  -0.17102304100990295,
+                  -2.470059394836426,
+                  -0.12744490802288055,
+                  0,
+                  -0.6877325773239136,
+                  -4.136590480804443,
+                  -0.8671779036521912,
+                  -0.3713816702365875,
+                  -0.9600629210472107,
+                  -0.3713816702365875,
+                  -0.8006274104118347,
+                  -0.7982852458953857,
+                  -2.4696500301361084,
+                  -2.468238592147827,
+                  -0.9659456610679626,
+                  -0.06522156298160553,
+                  0,
+                  -2.4678421020507812,
+                  4.944798510804027
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  -3.516305923461914,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1.1847361326217651,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.6307511329650879,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  4.051766872406006,
+                  1.3006305694580078,
+                  -1.2124699354171753,
+                  -2.117076873779297,
+                  7.92350435256958,
+                  5.1184797286987305,
+                  2.709639072418213,
+                  2.9895589351654053,
+                  -0.08990920335054398,
+                  3.7599844932556152,
+                  2.911349058151245,
+                  1.2017369270324707,
+                  1.2017369270324707,
+                  -1.4353655576705933,
+                  -1.4083126783370972,
+                  -2.032288074493408,
+                  -0.7902097105979919,
+                  -4.73956823348999,
+                  -0.3627174496650696,
+                  -0.6307511329650879,
+                  -1.2785228490829468,
+                  -0.052434030920267105,
+                  -4.1620774269104,
+                  -0.009175180457532406,
+                  -3.4822022914886475,
+                  -2.5233588218688965,
+                  -2.008437156677246,
+                  -1.0035614967346191,
+                  0,
+                  -0.00790402665734291,
+                  -0.0014568687183782458,
+                  -0.001334614004008472,
+                  -0.001334614004008472,
+                  -0.001334614004008472,
+                  -0.0011920547112822533,
+                  -0.0010487415129318833,
+                  -0.6121265292167664,
+                  -0.5533355474472046,
+                  0,
+                  -0.9596415162086487,
+                  -0.20594875514507294,
+                  -0.7728553414344788,
+                  -2.374083498421304
+                ],
+                [
+                  -0.026525987312197685,
+                  -0.05996287614107132,
+                  -0.08326004445552826,
+                  -0.042868081480264664,
+                  -0.3486652970314026,
+                  0,
+                  -0.004876752384006977,
+                  -1.1039414405822754,
+                  -0.04962318390607834,
+                  -0.05712120980024338,
+                  -1.0294493436813354,
+                  0,
+                  -0.011660744436085224,
+                  -0.03592847287654877,
+                  -0.02463201992213726,
+                  -0.02463201992213726,
+                  -0.02463201992213726,
+                  -0.02463201992213726,
+                  -0.011660744436085224,
+                  0,
+                  -0.0001786656939657405,
+                  -0.021801086142659187,
+                  -0.1821107268333435,
+                  0.19096289575099945,
+                  -0.23267759382724762,
+                  -0.1821107268333435,
+                  -0.013366143219172955,
+                  -0.019973332062363625,
+                  -0.03766776621341705,
+                  -0.03687778115272522,
+                  -0.0228652935475111,
+                  -0.00706766452640295,
+                  -0.005327105056494474,
+                  -0.004165344405919313,
+                  -0.02115032449364662,
+                  -0.014469731599092484,
+                  -0.032491523772478104,
+                  -0.014469731599092484,
+                  -0.012601238675415516,
+                  -0.026037050411105156,
+                  -0.00932559184730053,
+                  -2.0162806510925293,
+                  1.0771082639694214,
+                  -4.961764335632324,
+                  4.26606559753418,
+                  -6.598408222198486,
+                  2.4448177814483643,
+                  4.256241798400879,
+                  -0.7240467071533203,
+                  1.5459351539611816,
+                  2.4958956241607666,
+                  -0.33673447370529175,
+                  -0.3310682475566864,
+                  -0.3310682475566864,
+                  0,
+                  0,
+                  2.953335762023926,
+                  2.1601083278656006,
+                  2.2203619480133057,
+                  2.233473777770996,
+                  0.39410197734832764,
+                  0.7101491689682007,
+                  1.4368261098861694,
+                  3.726783514022827,
+                  0.8206084966659546,
+                  -0.9518107175827026,
+                  -1.349185585975647,
+                  -1.107181429862976,
+                  0,
+                  -1.125892162322998,
+                  -2.995077133178711,
+                  -0.03992808237671852,
+                  -0.006158319767564535,
+                  -0.011898473836481571,
+                  -0.006158319767564535,
+                  -0.0013911791611462831,
+                  0,
+                  -0.4919760525226593,
+                  -0.5469780564308167,
+                  -0.00004226194869261235,
+                  -0.635931134223938,
+                  -0.3412075638771057,
+                  -0.4067551791667938,
+                  -0.15347028430947815
+                ],
+                [
+                  -0.02412918210029602,
+                  -0.05164914205670357,
+                  -0.0704730972647667,
+                  -0.4624461829662323,
+                  1.7998390197753906,
+                  -0.4211486876010895,
+                  -0.012102649547159672,
+                  -0.5891443490982056,
+                  -0.05120812729001045,
+                  -0.052269380539655685,
+                  -0.21808966994285583,
+                  -0.011777079664170742,
+                  -0.022453760728240013,
+                  -0.018902847543358803,
+                  -0.01811051368713379,
+                  -0.01811051368713379,
+                  -0.01811051368713379,
+                  -0.01811051368713379,
+                  -0.44777628779411316,
+                  -0.43810245394706726,
+                  -0.0011682523181661963,
+                  -0.013490130193531513,
+                  -0.0402761809527874,
+                  0.4534563422203064,
+                  -0.11347438395023346,
+                  -0.0402761809527874,
+                  -0.012209382839500904,
+                  -0.012713863514363766,
+                  -0.02563888020813465,
+                  -0.025288112461566925,
+                  -0.011031094007194042,
+                  -0.008532565087080002,
+                  -0.007307311985641718,
+                  -0.006260922644287348,
+                  -0.00964233186095953,
+                  -0.009238162077963352,
+                  -0.018645383417606354,
+                  -0.009238162077963352,
+                  -0.008017554879188538,
+                  -0.013418233953416348,
+                  -0.006236022803932428,
+                  -2.363008499145508,
+                  1.0438640117645264,
+                  4.961519718170166,
+                  2.826188802719116,
+                  4.579559326171875,
+                  -5.783444404602051,
+                  -5.282836437225342,
+                  -1.5088502168655396,
+                  1.1195844411849976,
+                  -0.2643769383430481,
+                  -1.3552550077438354,
+                  -0.028049714863300323,
+                  -0.028049714863300323,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.5097638964653015,
+                  0.9673973321914673,
+                  0,
+                  -0.023699868470430374,
+                  0.9360118508338928,
+                  1.9693067073822021,
+                  0.05799585580825806,
+                  1.7948346138000488,
+                  1.815956711769104,
+                  -0.874207079410553,
+                  -3.6202030181884766,
+                  -0.06114517152309418,
+                  -0.00879522692412138,
+                  -0.3244849145412445,
+                  -0.00879522692412138,
+                  -0.0011579779675230384,
+                  0,
+                  -0.747105598449707,
+                  -0.7351199984550476,
+                  -0.2819577157497406,
+                  -0.06818478554487228,
+                  -0.06245418265461922,
+                  -0.012505310587584972,
+                  -0.9866926416537799
+                ],
+                [
+                  -0.1826060563325882,
+                  -0.37700745463371277,
+                  -0.49027830362319946,
+                  -0.4809572696685791,
+                  -0.4288697838783264,
+                  -0.17581555247306824,
+                  -0.30297863483428955,
+                  1.1464505195617676,
+                  -1.0719168186187744,
+                  -0.6467388868331909,
+                  -0.5449153780937195,
+                  -0.17107439041137695,
+                  -0.26007869839668274,
+                  -0.5133029818534851,
+                  -0.2077081799507141,
+                  -0.2077081799507141,
+                  -0.2077081799507141,
+                  -0.2077081799507141,
+                  -0.26335906982421875,
+                  -0.1743713617324829,
+                  -0.5569874048233032,
+                  -0.07475818693637848,
+                  -0.11573360115289688,
+                  -0.2199573963880539,
+                  -0.6749804019927979,
+                  -0.11573360115289688,
+                  -0.14792576432228088,
+                  -0.49857643246650696,
+                  -0.503764271736145,
+                  -0.39013412594795227,
+                  -0.4940733313560486,
+                  -0.10235708206892014,
+                  -0.08902663737535477,
+                  -0.07734484225511551,
+                  -0.4914437234401703,
+                  -0.17978814244270325,
+                  -0.2580379545688629,
+                  -0.17978814244270325,
+                  -0.17975273728370667,
+                  -0.0851447805762291,
+                  -0.01718418300151825,
+                  -0.24452373385429382,
+                  -0.6481701731681824,
+                  -1.053493857383728,
+                  0.9376204609870911,
+                  -1.0924997329711914,
+                  -1.3495131731033325,
+                  -1.3742426633834839,
+                  -0.07150480151176453,
+                  -1.08653724193573,
+                  -0.2850014865398407,
+                  -0.026094773784279823,
+                  -0.01361122727394104,
+                  -0.01361122727394104,
+                  0,
+                  0,
+                  -0.5282410979270935,
+                  -0.5464739203453064,
+                  -0.08168506622314453,
+                  -0.13118717074394226,
+                  -0.05556954815983772,
+                  -0.2776379883289337,
+                  -0.07270756363868713,
+                  0.9298005104064941,
+                  -0.10016776621341705,
+                  -0.34767889976501465,
+                  -1.4026567935943604,
+                  1.1515907049179077,
+                  0,
+                  1.1550861597061157,
+                  11.711636543273926,
+                  2.0919785499572754,
+                  0.8368562459945679,
+                  0.41588667035102844,
+                  0.8368562459945679,
+                  2.090392827987671,
+                  2.089273452758789,
+                  -1.0433859825134277,
+                  -0.9148653745651245,
+                  -0.3355175256729126,
+                  -0.23057866096496582,
+                  -0.057319652289152145,
+                  -0.5800939798355103,
+                  0.4847332770305894
+                ],
+                [
+                  -0.2895970046520233,
+                  -0.5331917405128479,
+                  -0.7419324517250061,
+                  -0.713392972946167,
+                  -1.0789750814437866,
+                  -0.2690327763557434,
+                  -0.24252468347549438,
+                  -0.5027381181716919,
+                  -0.8163549304008484,
+                  -0.7929052114486694,
+                  -0.010600410401821136,
+                  -0.7602828741073608,
+                  -0.8623177409172058,
+                  -0.7847307324409485,
+                  -0.29918184876441956,
+                  -0.29918184876441956,
+                  -0.29918184876441956,
+                  -0.29918184876441956,
+                  -0.3023895025253296,
+                  -0.1983928680419922,
+                  -0.1721021831035614,
+                  -0.09728168696165085,
+                  -0.18567825853824615,
+                  -0.2763371467590332,
+                  -0.9552469253540039,
+                  -0.18567825853824615,
+                  -0.18156187236309052,
+                  -0.7844536304473877,
+                  -0.7839601039886475,
+                  -0.5340786576271057,
+                  -0.7841829657554626,
+                  -0.12706300616264343,
+                  -0.11039477586746216,
+                  -0.09563398361206055,
+                  -0.7838892340660095,
+                  -0.230494886636734,
+                  -0.3272489309310913,
+                  -0.230494886636734,
+                  -0.2508339583873749,
+                  -0.15079620480537415,
+                  -0.06489021331071854,
+                  -0.28913629055023193,
+                  -0.9466244578361511,
+                  -1.8366858959197998,
+                  -1.7670313119888306,
+                  -2.039508104324341,
+                  -0.38265329599380493,
+                  -0.8855108618736267,
+                  -0.1119639128446579,
+                  -1.0851902961730957,
+                  -0.187220498919487,
+                  -0.04942471906542778,
+                  0,
+                  0,
+                  -0.029787592589855194,
+                  -0.00786818191409111,
+                  -0.10849744081497192,
+                  -0.007706579752266407,
+                  -0.06704840064048767,
+                  0,
+                  -0.04131428524851799,
+                  -0.03303949907422066,
+                  0,
+                  -0.08793140202760696,
+                  0,
+                  0,
+                  6.452492713928223,
+                  0,
+                  -0.6467045545578003,
+                  -0.026499124243855476,
+                  -0.8646218180656433,
+                  -0.08984746038913727,
+                  -0.5919917225837708,
+                  0.01358296163380146,
+                  -0.5919917225837708,
+                  -0.052843887358903885,
+                  -0.03422532230615616,
+                  7.038496971130371,
+                  7.03888463973999,
+                  0.00802451092749834,
+                  0.39859357476234436,
+                  0.403169721364975,
+                  6.456605434417725,
+                  0.7853740789817291
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "goodbye for now"
+      ],
+      [
+        "en",
+        "bye bye take care"
+      ],
+      [
+        "en",
+        "okay see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "farewell"
+      ],
+      [
+        "en",
+        "until we meet again"
+      ],
+      [
+        "en",
+        "take it easy"
+      ],
+      [
+        "en",
+        "see you soon"
+      ],
+      [
+        "en",
+        "catch you later"
+      ],
+      [
+        "en",
+        "have a good one"
+      ],
+      [
+        "en",
+        "good night"
+      ],
+      [
+        "en",
+        "adios"
+      ],
+      [
+        "en",
+        "later"
+      ],
+      [
+        "en",
+        "bye now"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "how do you do"
+      ],
+      [
+        "en",
+        "transfer funds from account xxxx to account yyyyy"
+      ],
+      [
+        "en",
+        "move money from xxxx to yyyyy"
+      ],
+      [
+        "en",
+        "give money to xxxx"
+      ],
+      [
+        "en",
+        "send money from xxxx to yyyyy"
+      ],
+      [
+        "en",
+        "transfer money between xxxx and yyyyy"
+      ],
+      [
+        "en",
+        "initiate transfer from xxxx to yyyyy"
+      ],
+      [
+        "en",
+        "execute transfer from xxxx to yyyyy"
+      ],
+      [
+        "en",
+        "move funds from account xxxx to account yyyyy"
+      ],
+      [
+        "en",
+        "transfer money from account xxxx to account yyyyy"
+      ],
+      [
+        "en",
+        "send funds from account xxxx to account yyyyy"
+      ],
+      [
+        "en",
+        "deposit funds into account yyyyy"
+      ],
+      [
+        "en",
+        "add money to account yyyyy"
+      ],
+      [
+        "en",
+        "put money into account yyyyy"
+      ],
+      [
+        "en",
+        "make a deposit to account yyyyy"
+      ],
+      [
+        "en",
+        "deposit cash to account yyyyy"
+      ],
+      [
+        "en",
+        "deposit money in account yyyyy"
+      ],
+      [
+        "en",
+        "give money to my account"
+      ],
+      [
+        "en",
+        "add funds to account yyyyy"
+      ],
+      [
+        "en",
+        "deposit amount into account yyyyy"
+      ],
+      [
+        "en",
+        "deposit cash into account yyyyy"
+      ],
+      [
+        "en",
+        "withdraw funds from account xxxx"
+      ],
+      [
+        "en",
+        "take out money from account xxxx"
+      ],
+      [
+        "en",
+        "withdraw cash from account xxxx"
+      ],
+      [
+        "en",
+        "get money from account xxxx"
+      ],
+      [
+        "en",
+        "make a withdrawal from account xxxx"
+      ],
+      [
+        "en",
+        "pull out funds from account xxxx"
+      ],
+      [
+        "en",
+        "withdraw amount from account xxxx"
+      ],
+      [
+        "en",
+        "withdraw cash from my account xxxx"
+      ],
+      [
+        "en",
+        "take funds from account xxxx"
+      ],
+      [
+        "en",
+        "check account balance"
+      ],
+      [
+        "en",
+        "view balance"
+      ],
+      [
+        "en",
+        "see account balance"
+      ],
+      [
+        "en",
+        "get account balance"
+      ],
+      [
+        "en",
+        "show me the balance"
+      ],
+      [
+        "en",
+        "balance inquiry"
+      ],
+      [
+        "en",
+        "check my balance"
+      ],
+      [
+        "en",
+        "account balance check"
+      ],
+      [
+        "en",
+        "current balance"
+      ],
+      [
+        "en",
+        "log out"
+      ],
+      [
+        "en",
+        "sign out"
+      ],
+      [
+        "en",
+        "log me out"
+      ],
+      [
+        "en",
+        "please log out"
+      ],
+      [
+        "en",
+        "I want to sign out"
+      ],
+      [
+        "en",
+        "sign me out"
+      ],
+      [
+        "en",
+        "please sign out"
+      ],
+      [
+        "en",
+        "I need to log out"
+      ],
+      [
+        "en",
+        "I need to sign out"
+      ],
+      [
+        "en",
+        "log off"
+      ],
+      [
+        "en",
+        "I want to log off"
+      ],
+      [
+        "en",
+        "please log off"
+      ],
+      [
+        "en",
+        "sign off"
+      ],
+      [
+        "en",
+        "I want to sign off"
+      ],
+      [
+        "en",
+        "please sign off"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.bye": [
+          {
+            "answer": "tocounter"
+          }
+        ],
+        "greetings.hello": [
+          {
+            "answer": "Hi! Welcome to our banking service. How may I help you?"
+          },
+          {
+            "answer": "Hi there! I’m your virtual banking assistant. What can I do for you today?"
+          },
+          {
+            "answer": "Hey! I’m here to help you with your banking needs. What can I assist you with?"
+          },
+          {
+            "answer": "Hello! It’s great to see you. How can I assist you with your banking today?"
+          },
+          {
+            "answer": "Hi there! Need assistance with anything banking-related?"
+          },
+          {
+            "answer": "Greetings! How can I assist you with your banking matters today?"
+          },
+          {
+            "answer": "Hello! I’m here to make your banking experience smooth. How can I assist you?"
+          }
+        ],
+        "transfer": [
+          {
+            "answer": "transfer"
+          }
+        ],
+        "deposit": [
+          {
+            "answer": "deposit"
+          }
+        ],
+        "withdraw": [
+          {
+            "answer": "withdraw"
+          }
+        ],
+        "checkbalance": [
+          {
+            "answer": "checkbalance"
+          }
+        ],
+        "logout": [
+          {
+            "answer": "logout"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
