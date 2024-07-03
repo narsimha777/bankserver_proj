@@ -147,9 +147,10 @@ app.post('/signup', async (req, res, next)=>{
             res.status(201).json({message: "User name already exists"});
         }
         const hashed = await bcrypt.hash(password, 10);
-        const result = await pool.query("INSERT INTO USER_DETAILS VALUES($1, $2, $3, $4, $5)", [user_id, user_name, gmail, phone_number, hashed]);
+        const result = await pool.query("INSERT INTO USER_DETAILS VALUES($1, $2, $3, $4, $5) RETURNING *", [user_id, user_name, gmail, phone_number, hashed]);
+        console.log(result);
         if(result.rowCount===1){
-            req.login(newUser.rows[0], function(err) {
+            req.login(result.rows[0], function(err) {
                 if (err) {
                   return next(err);
                 }
