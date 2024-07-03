@@ -167,20 +167,25 @@ app.post('/signup', async (req, res, next)=>{
 
 app.post('/deposit', authenticateToken, async (req, res, next)=>{
     try{
-        const {type, date, user_id, amount} = req.body;
-        const result = await pool.query("UPDATE USER_DETAILS SET amount_avail = $1 WHERE User_id = $2", [amount,user_id]);
+        const {type, user_id, amount} = req.body;
+        const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_id = $1", [user_id]);
         if(result.rowCount===1){
-            const tr = await pool.query("INSERT INTO TRANSACTIONS VALUES ($2, $2, $3, $1, $2, $4)", [date, user_id, amount, type]);
-            res.status(200).json({message: "amount added"});
-        }else{
-            res.status(400).json({message: "Error in depositing"});
+            let amt = result.rows[0].amount_avail;
+            amt = amt + amount;
+            const rslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_id = $1", [user_id, amt]);
+            if(rslt.rowCount===1){
+                const tr = await pool.query("INSERT INTO TRANSACTIONS(f, t, amount, user_id, type) VALUES ($1, $1, $2, $1, $3)", [user_id, amount, type]);
+                res.status(200).json({message: "Transaction Successful"});
+            }else{
+                res.status(400).json({message: "Transaction failed"});
+            }
         }
     }catch(e){
         next(e);
     }
 });
 
-app.get('/checkbalance/:id', authenticateToken, async(req, res, next)=>{
+app.get('/checkbalance/:id',  authenticateToken, async(req, res, next)=>{
     try{
         const {id} = req.params;
         const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_id = $1", [id]);
@@ -196,20 +201,29 @@ app.get('/checkbalance/:id', authenticateToken, async(req, res, next)=>{
 
 app.post('/transfer', authenticateToken, async(req, res, next)=>{
     try{
-        const {date, type, f, t, amount} = req.body;
-        const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_id = $1", [f]);
+        const {type, f, t, amount} = req.body;
+
+        if (!f || !t || !amount || !type) {
+            return res.status(400).json({ message: "Invalid request body" });
+        }
+
+        const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_name = $1 ", [f]);
+        if(result.rowCount==0){
+            res.status(400).json({message: "No user available"});
+        }
+        console.log(result);
         if(result.rows[0].amount_avail < amount){
             res.status(200).json({message: "Insufficient balance"});
         }else{
-            const rslt = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_id = $1", [t]);
+            const rslt = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_name = $1", [t]);
             let amt = rslt.rows[0].amount_avail;
             let frmamt = result.rows[0].amount_avail;
             frmamt = frmamt - amount;
             amt = amt + amount;
-            const frmreslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_id = $1", [f, frmamt]);
-            const reslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_id = $1", [t, amt]);
+            const frmreslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_name = $1", [f, frmamt]);
+            const reslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_name = $1", [t, amt]);
             if(reslt.rowCount === 1 && frmreslt.rowCount === 1){
-                const tr = await pool.query("INSERT INTO TRANSACTIONS VALUES ($2, $3, $4, $1, $2, $5)", [date, f, t, amount, type]);
+                const tr = await pool.query("INSERT INTO TRANSACTIONS(f, t, amount, user_id, type) VALUES ($1, $2, $3, $1, $4)", [f, t, amount, type]);
                 res.status(200).json({message: "Transaction Successful!"});
             }else{
                 res.status(500).json({message: "Transaction failed"});
@@ -222,7 +236,7 @@ app.post('/transfer', authenticateToken, async(req, res, next)=>{
 
 app.post('/withdraw', authenticateToken, async(req, res, next)=>{
     try{
-        const {type, date, user_id, amount} = req.body;
+        const {type, user_id, amount} = req.body;
         const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_id = $1", [user_id]);
         if(result.rowCount===1){
             if(result.rows[0].amount_avail<amount){
@@ -232,7 +246,7 @@ app.post('/withdraw', authenticateToken, async(req, res, next)=>{
                 amt = amt - amount;
                 const rslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_id = $1", [user_id, amt]);
                 if(rslt.rowCount===1){
-                    const tr = await pool.query("INSERT INTO TRANSACTIONS VALUES ($2, $2, $3, $1, $2, $4)", [date, user_id, amount, type]);
+                    const tr = await pool.query("INSERT INTO TRANSACTIONS(f, t, amount, user_id, type) VALUES ($1, $1, $2, $1, $3)", [user_id, amount, type]);
                     res.status(200).json({message: "Transaction Successful"});
                 }else{
                     res.status(400).json({message: "Transaction failed"});
