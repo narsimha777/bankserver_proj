@@ -171,7 +171,7 @@ app.post('/deposit', authenticateToken, async (req, res, next)=>{
         const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_id = $1", [user_id]);
         if(result.rowCount===1){
             let amt = result.rows[0].amount_avail;
-            amt = amt + amount;
+            amt = parseInt(amt) + parseInt(amount);
             const rslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_id = $1", [user_id, amt]);
             if(rslt.rowCount===1){
                 const tr = await pool.query("INSERT INTO TRANSACTIONS(f, t, amount, user_id, type) VALUES ($1, $1, $2, $1, $3)", [user_id, amount, type]);
@@ -219,7 +219,7 @@ app.post('/transfer', authenticateToken, async(req, res, next)=>{
             let amt = rslt.rows[0].amount_avail;
             let frmamt = result.rows[0].amount_avail;
             frmamt = frmamt - amount;
-            amt = amt + amount;
+            amt = parseInt(amt) + parseInt(amount);
             const frmreslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_name = $1", [f, frmamt]);
             const reslt = await pool.query("UPDATE USER_DETAILS SET amount_avail = $2 WHERE user_name = $1", [t, amt]);
             if(reslt.rowCount === 1 && frmreslt.rowCount === 1){
