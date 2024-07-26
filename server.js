@@ -207,7 +207,7 @@ app.post('/transfer', authenticateToken, async(req, res, next)=>{
             return res.status(400).json({ message: "Invalid request body" });
         }
 
-        const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_name = $1 ", [f]);
+        const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_id = $1 ", [f]);
         if(result.rowCount==0){
             res.status(400).json({message: "No user available"});
         }
