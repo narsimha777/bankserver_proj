@@ -144,7 +144,7 @@ app.post('/signup', async (req, res, next)=>{
         }
         const r = await pool.query("SELECT FROM USER_DETAILS WHERE user_name = $1", [user_name]);
         if(r.rowCount>0){
-            res.status(201).json({message: "User name already exists"});
+            return res.status(201).json({message: "User name already exists"});
         }
         const hashed = await bcrypt.hash(password, 10);
         const result = await pool.query("INSERT INTO USER_DETAILS VALUES($1, $2, $3, $4, $5) RETURNING *", [user_id, user_name, gmail, phone_number, hashed]);
@@ -158,7 +158,7 @@ app.post('/signup', async (req, res, next)=>{
                 return res.status(200).json({ message: 'Registration successful', user: req.user, token:token});
               });
         }else{
-            res.status(404).json({message:"Please check your inputs"});
+            return res.status(404).json({message:"Please check your inputs"});
         }
     }catch (e){
         next(e);
@@ -209,7 +209,7 @@ app.post('/transfer', authenticateToken, async(req, res, next)=>{
 
         const result = await pool.query("SELECT amount_avail FROM USER_DETAILS WHERE user_id = $1 ", [f]);
         if(result.rowCount==0){
-            res.status(400).json({message: "No user available"});
+            return res.status(400).json({message: "No user available"});
         }
         console.log(result);
         if(result.rows[0].amount_avail < amount){
